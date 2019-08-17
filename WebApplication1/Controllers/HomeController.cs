@@ -21,7 +21,7 @@ namespace WebApplication1.Controllers
         public IActionResult Index()
         {
             string configValue = _consfiguration["Test"];
-            return Content(configValue);
+            return Content("Testing It From Visual Studio");
         }
 
         public IActionResult Privacy()
