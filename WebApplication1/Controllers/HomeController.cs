@@ -4,15 +4,24 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
+       private readonly IConfiguration _consfiguration;
+
+
+        public HomeController(IConfiguration configuration)
+        {
+            this._consfiguration = configuration;
+        }
         public IActionResult Index()
         {
-            return View();
+            string configValue = _consfiguration["Test"];
+            return Content(configValue);
         }
 
         public IActionResult Privacy()
