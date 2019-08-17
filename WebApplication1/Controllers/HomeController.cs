@@ -20,8 +20,8 @@ namespace WebApplication1.Controllers
         }
         public IActionResult Index()
         {
-            string configValue = _consfiguration["Test"];
-            return Content("Testing It From Visual Studio");
+            ViewBag.Environemnt = _consfiguration["Test"];
+            return View();
         }
 
         public IActionResult Privacy()
